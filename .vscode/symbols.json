@@ -1,1 +1,1 @@
-{"symbols":{},"files":{"next-env.d.ts":"2023-11-13T19:43:42.240Z","tailwind.config.ts":"2023-11-13T19:43:42.240Z"}}
+{"symbols":{"PageProps":{"hasNamespace":false,"type":1,"moduleName":"page","relativePath":".next/types/app/page"},"LayoutProps":{"hasNamespace":false,"type":1,"moduleName":"page","relativePath":".next/types/app/page"}},"files":{"next-env.d.ts":"2023-11-13T19:43:42.240Z","tailwind.config.ts":"2023-11-14T19:45:35.094Z",".next/types/app/layout.ts":"2023-11-14T19:56:11.294Z",".next/types/app/page.ts":"2023-11-14T19:56:11.294Z"}}
