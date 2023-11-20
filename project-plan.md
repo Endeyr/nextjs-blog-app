@@ -3,6 +3,10 @@
 ## Technology
 
 - Authentication with next-auth
+- Password Hashing with bcrypt
+- Hosted on Vercel
+- Testing with Jest
+- Verification with Zod
 
 ## Users will be able to
 
