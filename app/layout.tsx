@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
-import { getServerSession } from 'next-auth'
 import { Inter } from 'next/font/google'
-import Logout from './auth/logout'
 import Footer from './components/footer'
 import Navigation from './components/navigation'
+import AuthProvider from './context/AuthProvider'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -18,15 +17,16 @@ export default async function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
-	const session = await getServerSession()
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<Navigation />
-				{!!session && <Logout />}
-				{!session && <span>No User Found</span>}
-				{children}
-				<Footer />
+				<AuthProvider>
+					<Navigation />
+					<main className="flex justify-center items-start p-6 min-h-screen">
+						{children}
+					</main>
+					<Footer />
+				</AuthProvider>
 			</body>
 		</html>
 	)

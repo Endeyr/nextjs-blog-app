@@ -1,10 +1,12 @@
 'use client'
 
+import Logout from '@/app/auth/logout'
 import { Bars4Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import Link from 'next/link'
 import { useState } from 'react'
 import MenuOverlay from '../menu-overlay/index'
 import NavLink from './navlink'
+import AuthLink from '../auth'
 
 // Allows adding more navlinks to the navbar
 const navLinks = [
@@ -27,6 +29,7 @@ const navLinks = [
 ]
 
 const Navbar = () => {
+	const user = true
 	const [navbarOpen, setNavbarOpen] = useState<boolean>(false)
 
 	const toggle = () => setNavbarOpen(!navbarOpen)
@@ -75,6 +78,7 @@ const Navbar = () => {
 										<NavLink href={link.path} title={link.title} />
 									</li>
 								))}
+								<AuthLink />
 							</ul>
 						</div>
 					</div>

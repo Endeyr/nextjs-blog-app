@@ -7,6 +7,7 @@
 - Hosted on Vercel
 - Testing with Jest
 - Verification with Zod
+- Postman for API testing
 
 ## Users will be able to
 

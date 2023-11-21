@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Navbar from './navbar'
 import Sidebar from './sidebar'
 
-const Navigation = () => {
+const Navigation = (session: any) => {
 	const [isOpen, setIsOpen] = useState(false)
 	const toggle = () => {
 		setIsOpen(!isOpen)
