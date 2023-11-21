@@ -3,6 +3,7 @@ import { useSession } from 'next-auth/react'
 import Navlink from '../navbar/navlink'
 
 const AuthLink = () => {
+	// gets the current session to display login or logout
 	const { data: session } = useSession()
 
 	return (
