@@ -2,7 +2,6 @@ import { sql } from '@vercel/postgres'
 import { compare } from 'bcrypt'
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
-import { signOut } from 'next-auth/react'
 
 const handler = NextAuth({
 	session: {
