@@ -54,6 +54,7 @@ const RegisterForm = () => {
 				name="password"
 				required
 			/>
+			{/* Add hidden input for role + pfp */}
 			<SubmitButton />
 			<p aria-live="polite" className="sr-only" role="status">
 				{/* {state?.message} */}

@@ -28,7 +28,7 @@ body {
 
 @layer utilities {
 	.section-min-height {
-		min-height: calc(100vh - 200px);
+		min-height: calc(100vh - 68px);
 		/* 68px is from padding + line height */
 	}
 }

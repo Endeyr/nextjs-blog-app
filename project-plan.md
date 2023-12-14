@@ -24,15 +24,27 @@
 Outline:
 
 - Nav
-- Main - Blogs / Blogs / Author Page
+- Main - Blog / Blogs / Author Page
 - Footer
+
+Databases:
+
+User
+
+- id
+- email
+- password
+- role
+- image
 
 Blog
 
+- id
 - Articles
 
 Article
 
+- id
 - Thumbnail(image)
 - Tag(text)
 - Author(text)
@@ -42,6 +54,7 @@ Article
 
 Author
 
+- id
 - Thumbnail(image)
 - First Name(text)
 - Last Name(text)
