@@ -8,6 +8,7 @@
 - Testing with Jest
 - Verification with Zod
 - Postman for API testing
+- Next-themes for light / dark mode control
 
 ## Users will be able to
 

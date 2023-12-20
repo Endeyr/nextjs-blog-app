@@ -3,6 +3,7 @@
 import { Bars4Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import Link from 'next/link'
 import { useState } from 'react'
+import ThemeSwitch from '../../theme-switch'
 import AuthLink from '../auth'
 import MenuOverlay from '../menu-overlay/index'
 import NavLink from './navlink'
@@ -77,6 +78,9 @@ const Navbar = () => {
 									</li>
 								))}
 								<AuthLink />
+								<li className="flex justify-center items-center mt-0.5">
+									<ThemeSwitch />
+								</li>
 							</ul>
 						</div>
 					</div>

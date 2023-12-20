@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import Footer from './components/footer'
 import Navigation from './components/navigation'
 import AuthProvider from './context/AuthProvider'
+import Provider from './context/Provider'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -19,15 +20,17 @@ export default async function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<body className={`${inter.className} antialiased`}>
 				<AuthProvider>
-					<Navigation />
-					<main className="flex justify-center items-start p-6 min-h-screen">
-						{children}
-						<SpeedInsights />
-					</main>
-					<Footer />
+					<Provider>
+						<Navigation />
+						<main className="flex justify-center items-start p-6 min-h-screen">
+							{children}
+							<SpeedInsights />
+						</main>
+						<Footer />
+					</Provider>
 				</AuthProvider>
 			</body>
 		</html>
