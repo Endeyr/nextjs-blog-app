@@ -21,7 +21,7 @@ export default async function RootLayout({
 }) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={`${inter.className} antialiased`}>
+			<body className={`${inter.className} min-h-screen antialiased`}>
 				<AuthProvider>
 					<Provider>
 						<Navigation />

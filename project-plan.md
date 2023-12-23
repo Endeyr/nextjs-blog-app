@@ -1,10 +1,17 @@
 # Blog Web App:
 
+## To-do
+
+- fix next-auth login / register, validate with zod
+- fetch blogs with tanstack react query
+- create new blogs, validate with zod
+
 ## Technology
 
 - Authentication with next-auth
 - Password Hashing with bcrypt
 - Hosted on Vercel
+- Drizzle for SQL queries
 - Testing with Jest
 - Verification with Zod
 - Postman for API testing
