@@ -12,7 +12,7 @@ const getData = async () => {
 		const endpoint =
 			process.env.VERCEL_ENV === 'development'
 				? `${domain}/api/posts`
-				: `${process.env.VERCEL_URL}/api/posts` // Errors are likely when you depend on something like a 3rd party api
+				: `${process.env.URL}/api/posts` // Errors are likely when you depend on something like a 3rd party api
 		const res = await fetch(endpoint) // HTTP GET method by default
 		// check if fetch was successful
 		if (!res.ok) {
