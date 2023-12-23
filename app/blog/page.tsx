@@ -11,7 +11,8 @@ const getData = async () => {
 		// Grab api endpoint
 		const endpoint = `${domain}/api/posts`
 		// Errors are likely when you depend on something like a 3rd party api
-		const res = await fetch(endpoint) // HTTP GET method by default
+		const res = await fetch(endpoint, { cache: 'no-store' }) // HTTP GET method by default
+		// const res = await fetch(endpoint, { next: { revalidate: 10 } })
 		// check if fetch was successful
 		if (!res.ok) {
 			throw new Error('Failed to fetch data')
@@ -32,6 +33,7 @@ const getData = async () => {
 const Blogs = async () => {
 	const data = await getData()
 	const items = data && data.items ? [...data.items] : []
+	console.log(process.env.NEXT_PUBLIC_VERCEL_URL)
 	return (
 		<article className="flex flex-col gap-4">
 			<h1>Posts:</h1>
