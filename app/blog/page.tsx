@@ -1,5 +1,10 @@
 // import BlogCard from './BlogCard'
 import { getDomain } from '../lib/getDomain'
+
+// fetch caching options
+// stores data in memory, default is force-cache; good for when you look something up once on being build
+// no-store: trigger on render
+// revalidate: trigger after set number of second, good for constant updates such as twitter
 const getData = async () => {
 	try {
 		const domain = getDomain()
@@ -10,7 +15,11 @@ const getData = async () => {
 		if (!res.ok) {
 			throw new Error('Failed to fetch data')
 		}
-		// assumes endpoint is json data format
+		// checks if the content is json data
+		if (res.headers.get('content-type') !== 'application/json') {
+			// if content isn't json data we return an empty list
+			return { items: [] }
+		}
 		const result = await res.json()
 		return result
 	} catch (error) {
