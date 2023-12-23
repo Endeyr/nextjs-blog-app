@@ -9,10 +9,8 @@ const getData = async () => {
 	try {
 		const domain = getDomain()
 		// Grab api endpoint
-		const endpoint =
-			process.env.VERCEL_ENV === 'development'
-				? `${domain}/api/posts`
-				: 'https://nextjs-blog-app-mauve/api/posts' // Errors are likely when you depend on something like a 3rd party api
+		const endpoint = `${domain}/api/posts`
+		// Errors are likely when you depend on something like a 3rd party api
 		const res = await fetch(endpoint) // HTTP GET method by default
 		// check if fetch was successful
 		if (!res.ok) {
