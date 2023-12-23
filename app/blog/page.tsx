@@ -1,6 +1,5 @@
-// import BlogCard from './BlogCard'
 import { getDomain } from '../lib/getDomain'
-
+import BlogCard from './card'
 // fetch caching options
 // stores data in memory, default is force-cache; good for when you look something up once on being build
 // no-store: trigger on render
@@ -40,7 +39,7 @@ const Blogs = async () => {
 			<ul>
 				{items &&
 					items.map((item, idx) => {
-						return <li key={`post-${idx}`}>{item.title}</li>
+						return <BlogCard key={`post-${idx}`} title={item.title} />
 					})}
 			</ul>
 		</article>
