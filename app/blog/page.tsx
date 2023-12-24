@@ -1,5 +1,6 @@
 import { getDomain } from '../lib/getDomain'
 import BlogCard from './card'
+import BlogsCreateForm from './create/page'
 // fetch caching options
 // stores data in memory, default is force-cache; good for when you look something up once on being build
 // no-store: trigger on render
@@ -34,15 +35,17 @@ const Blogs = async () => {
 	const items = data && data.items ? [...data.items] : []
 	console.log(process.env.NEXT_PUBLIC_VERCEL_URL)
 	return (
-		<article className="flex flex-col gap-4">
-			<h1>Posts:</h1>
-			<ul>
-				{items &&
-					items.map((item, idx) => {
-						return <BlogCard key={`post-${idx}`} title={item.title} />
-					})}
-			</ul>
-		</article>
+		<section className="flex flex-col gap-4">
+			<article className="flex flex-col gap-4">
+				<h1>Posts:</h1>
+				<ul>
+					{items &&
+						items.map((item, idx) => {
+							return <BlogCard key={`post-${idx}`} title={item.title} />
+						})}
+				</ul>
+			</article>
+		</section>
 	)
 }
 export default Blogs

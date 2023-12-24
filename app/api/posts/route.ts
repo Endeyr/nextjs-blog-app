@@ -13,6 +13,6 @@ export const GET = async () => {
 		],
 	})
 }
-// export const POST = async () => {
-// 	return NextResponse.json({ hello: 'World' })
-// }
+export const POST = async () => {
+	return NextResponse.json({ hello: 'World' })
+}
