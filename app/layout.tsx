@@ -1,4 +1,5 @@
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { GeistSans } from 'geist/font/sans'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Footer from './components/footer'
@@ -21,7 +22,9 @@ export default async function RootLayout({
 }) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={`${inter.className} min-h-screen antialiased`}>
+			<body
+				className={`${inter.className} ${GeistSans.className} min-h-screen antialiased`}
+			>
 				<AuthProvider>
 					<Provider>
 						<Navigation />

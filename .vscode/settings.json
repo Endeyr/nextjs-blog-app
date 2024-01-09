@@ -1,3 +1,4 @@
 {
-	"cSpell.words": ["authlink", "discoverability", "nextauth", "uncategorized"]
+	"cSpell.words": ["authlink", "discoverability", "nextauth", "uncategorized"],
+	"typescript.tsdk": "node_modules/typescript/lib"
 }
