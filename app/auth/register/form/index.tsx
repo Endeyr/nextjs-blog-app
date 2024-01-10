@@ -11,7 +11,6 @@ const RegisterForm = () => {
 		register,
 		handleSubmit,
 		formState: { errors, isSubmitting },
-		reset,
 		setError,
 	} = useForm<TRegisterSchema>({ resolver: zodResolver(registerSchema) })
 
@@ -67,11 +66,11 @@ const RegisterForm = () => {
 	return (
 		<form
 			onSubmit={handleSubmit(onSubmit)}
-			className="flex flex-col gap-2 mx-auto w-full"
+			className="flex flex-col gap-2 mx-auto w-1/3"
 		>
 			<label htmlFor="firstName">Enter First Name</label>
 			<input
-				className="rounded-lg px-2 dark:text-white"
+				className="rounded-lg px-2 bg-zinc-200 dark:bg-zinc-700 dark:text-white"
 				type="text"
 				id="firstName"
 				{...register('firstName')}
@@ -81,7 +80,7 @@ const RegisterForm = () => {
 			)}
 			<label htmlFor="lastName">Enter Last Name</label>
 			<input
-				className="rounded-lg px-2 dark:text-white"
+				className="rounded-lg px-2 bg-zinc-200 dark:bg-zinc-700 dark:text-white"
 				type="lastName"
 				id="lastName"
 				{...register('lastName')}
@@ -91,7 +90,7 @@ const RegisterForm = () => {
 			)}
 			<label htmlFor="email">Enter Email</label>
 			<input
-				className="rounded-lg px-2 dark:text-white"
+				className="rounded-lg px-2 bg-zinc-200 dark:bg-zinc-700 dark:text-white"
 				type="email"
 				id="email"
 				{...register('email')}
@@ -101,7 +100,7 @@ const RegisterForm = () => {
 			)}
 			<label htmlFor="password">Enter Password</label>
 			<input
-				className="rounded-lg px-2 dark:text-white"
+				className="rounded-lg px-2 bg-zinc-200 dark:bg-zinc-700 dark:text-white"
 				type="password"
 				id="password"
 				{...register('password')}
@@ -111,7 +110,7 @@ const RegisterForm = () => {
 			)}
 			<label htmlFor="confirm-password">Confirm Password</label>
 			<input
-				className="rounded-lg px-2 dark:text-white"
+				className="rounded-lg px-2 bg-zinc-200 dark:bg-zinc-700 dark:text-white"
 				type="password"
 				id="confirm-password"
 				{...register('confirmPassword')}
@@ -119,7 +118,6 @@ const RegisterForm = () => {
 			{errors.confirmPassword && (
 				<p className="text-red-500">{`${errors.confirmPassword.message}`}</p>
 			)}
-			{/* Add hidden input for role + pfp */}
 			<button
 				disabled={isSubmitting}
 				type="submit"

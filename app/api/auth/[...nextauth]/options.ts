@@ -28,14 +28,17 @@ export const options: NextAuthOptions = {
 				email: {},
 				password: {},
 			},
-			async authorize(credentials, req) {
-				// add some validation
+			async authorize(credentials) {
+				const credentialDetails = {
+					email: credentials?.email,
+					password: credentials?.password,
+				}
 				const response = await sql`
-          SELECT * FROM users WHERE email=${credentials?.email}
+          SELECT * FROM users WHERE email=${credentialDetails.email}
         `
 				const user = response.rows[0]
 				const passwordCorrect = await compare(
-					credentials?.password || '',
+					credentialDetails.password || '',
 					user.password
 				)
 				if (passwordCorrect) {
