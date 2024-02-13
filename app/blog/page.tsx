@@ -33,7 +33,6 @@ const getData = async () => {
 const Blogs = async () => {
 	const data = await getData()
 	const items = data && data.items ? [...data.items] : []
-	console.log(process.env.NEXT_PUBLIC_VERCEL_URL)
 	return (
 		<section className="flex flex-col gap-4">
 			<article className="flex flex-col gap-4">
@@ -45,6 +44,7 @@ const Blogs = async () => {
 						})}
 				</ul>
 			</article>
+			<BlogsCreateForm />
 		</section>
 	)
 }

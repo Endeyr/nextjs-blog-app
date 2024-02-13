@@ -28,7 +28,7 @@ export default async function RootLayout({
 				<AuthProvider>
 					<Provider>
 						<Navigation />
-						<main className="flex justify-center items-start p-6 min-h-screen">
+						<main className="flex justify-center items-start p-6 section-min-height">
 							{children}
 							<SpeedInsights />
 						</main>

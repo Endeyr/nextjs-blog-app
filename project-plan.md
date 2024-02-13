@@ -2,9 +2,9 @@
 
 ## To-do
 
-- fix next-auth login / register, validate with zod
-- fetch blogs with tanstack react query
+- log in / register with google
 - create new blogs, validate with zod
+- style blogs page
 
 ## Technology
 
