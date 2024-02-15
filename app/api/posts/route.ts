@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 
 // API endpoints connect the db to the frontend
 export const GET = async () => {
+	// fetch from db
 	return NextResponse.json({
 		items: [
 			{ id: 1, title: 'New World' },
@@ -13,6 +14,14 @@ export const GET = async () => {
 		],
 	})
 }
-export const POST = async () => {
-	return NextResponse.json({ hello: 'World' })
+export const POST = async (request: Request) => {
+	// add to db
+	// destructure
+	const body: unknown = await request.json()
+	// validate body
+	// if else to handle errors or insert into db
+	// display on ui errors or success message
+	return NextResponse.json({
+		success: true,
+	})
 }

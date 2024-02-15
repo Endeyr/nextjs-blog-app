@@ -24,6 +24,7 @@ const BlogsCreateForm = () => {
 		}
 		const res = await fetch(endpoint, options)
 		const result = await res.json()
+		// results will be either success message or errors
 		setResults(result)
 	}
 	return (
