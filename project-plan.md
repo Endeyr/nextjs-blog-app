@@ -2,7 +2,6 @@
 
 ## To-do
 
-- log in / register with google
 - create new blogs, validate with zod
 - style blogs page
 
