@@ -1,16 +1,15 @@
-import type Author from './author'
+import { z } from 'zod'
+import { authorSchema } from './author'
 
-type PostType = {
-	slug: string
-	title: string
-	date: string
-	coverImage: string
-	author: Author
-	excerpt: string
-	ogImage: {
-		url: string
-	}
-	content: string
-}
+export const postSchema = z.object({
+	slug: z.string(),
+	title: z.string(),
+	date: z.string(),
+	coverImage: z.string(),
+	author: authorSchema,
+	excerpt: z.string(),
+	image: z.string(),
+	content: z.string(),
+})
 
-export default PostType
+export type TPostSchema = z.infer<typeof postSchema>

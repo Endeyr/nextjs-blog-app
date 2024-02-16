@@ -1,6 +1,8 @@
-type Author = {
-	name: string
-	picture: string
-}
+import { z } from 'zod'
 
-export default Author
+export const authorSchema = z.object({
+	name: z.string(),
+	pfp: z.string()
+})
+
+export type TAuthorSchema = z.infer<typeof authorSchema>

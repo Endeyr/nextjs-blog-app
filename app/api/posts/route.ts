@@ -1,3 +1,5 @@
+import { postSchema } from '@/lib/types/blog/post'
+import { sql } from '@vercel/postgres'
 import { NextResponse } from 'next/server'
 
 // API endpoints connect the db to the frontend
@@ -19,9 +21,24 @@ export const POST = async (request: Request) => {
 	// destructure
 	const body: unknown = await request.json()
 	// validate body
+	const result = postSchema.safeParse(body)
 	// if else to handle errors or insert into db
+	let zodErrors = {}
+	if (!result.success) {
+		result.error.issues.forEach((issue) => {
+			zodErrors = { ...zodErrors, [issue.path[0]]: issue.message }
+		})
+	} else {
+		const response = await sql`
+		INSERT INTO posts ()
+		VALUES ()
+		`
+	}
+
 	// display on ui errors or success message
-	return NextResponse.json({
-		success: true,
-	})
+	return NextResponse.json(
+		Object.keys(zodErrors).length > 0
+			? { errors: zodErrors }
+			: { success: true }
+	)
 }
