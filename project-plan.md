@@ -4,6 +4,7 @@
 
 - create new blogs, validate with zod
 - style blogs page
+- pull news articles from https://mediastack.com/ api
 
 ## Technology
 
